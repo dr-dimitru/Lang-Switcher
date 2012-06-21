@@ -10,10 +10,10 @@ Install:
 | text_lang |varchar(20)  | YES  |     | NULL    |                |
 +-----------+-------------+------+-----+---------+----------------+
 !IMPORTANT:
-Connection to MySQL have to be thru mysqli connector
-Or you may adupt code for ither connector or DB type
+Connection to MySQL needs to be thru mysqli connector
+Or you may adopt code for other connector or DB type
 
- - Content of table bust be like:
+ - Content of table must be like:
 +----+-------+---------+
 | id | lang  | fb_lang |
 +----+-------+---------+
@@ -21,7 +21,7 @@ Or you may adupt code for ither connector or DB type
 | en | en_US | English |
 +----+-------+---------+ 
 
- - Put (require) lang_switcher.php at very top right after mysql connection setup on every page where you need to switch the language
+ - Require_once lang_switcher.php at very top right after mysql connection setup on every page where you need to switch the language
    
    
    ============================|LICENSE|====================================
