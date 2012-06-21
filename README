@@ -1,40 +1,27 @@
---------------------|DOWNLOAD  INFO|--------------------
-Download full vesion in archive build.7z, build.tgz or build.zip
-Or download partically.
-
 ---------------------|INSTALLATION|---------------------
 Install:
- - Import DB tables structure from adminizer_db.sql
- - Setup your settings in admin/settings.php
- - Upload files to your FTP-server
- 
-Setup:
- - Go to http://yours-site.com/admin
- - To login into CMS use "login" and "pass": admin and admin
- - Change preset login and pass at "Admins"->Press "edit"
- - Logout and login again using new login and password
- 
- - Go to http://yours-site.com/admin
- - Edit main site settings at "Site Settings"
- 
-Additional:
- - see .htaccess file for more settings
+ - Create table for languages like:
++-----------+-------------+------+-----+---------+----------------+
+| Field     | Type        | Null | Key | Default | Extra          |
++-----------+-------------+------+-----+---------+----------------+
+| id        |int(11)      | NO   | PRI |         | auto_increment |
+| lang      |varchar(10)  | YES  |     | NULL    |                |
+| fb_lang   |varchar(10)  | YES  |     | NULL    |                |
+| text_lang |varchar(20)  | YES  |     | NULL    |                |
++-----------+-------------+------+-----+---------+----------------+
+!IMPORTANT:
+Connection to MySQL have to be thru mysqli connector
+Or you may adupt code for ither connector or DB type
 
-More info:
- - For more information go to http://adminizer.veliovgroup.com
+ - Content of table bust be like:
++----+-------+---------+
+| id | lang  | fb_lang |
++----+-------+---------+
+| ru | ru_RU | Русский |
+| en | en_US | English |
++----+-------+---------+ 
 
-
-
-   ========================| Adminizer CMS |================================
-   Copyright 2012 Veliov Group: Dmitriy A. Golev
-   
-   This product includes software developed at
-   Veliov Group by Dmitriy A. Golev (http://veliovgroup.com/).
-   
-   Portions of this software were developed by Twitter's team in Bootstrap 
-   project (http://twitter.github.com/bootstrap/).
-   
-   The original software is available at http://adminizer.veliovgroup.com
+ - Put (require) lang_switcher.php at very top right after mysql connection setup on every page where you need to switch the language
    
    
    ============================|LICENSE|====================================
